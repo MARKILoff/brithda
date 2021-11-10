@@ -1,25 +1,51 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import Home from './pages/Home'
+import Login from './pages/Login'
+import Register from './pages/Register'
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import TopBar from './pages/TopBar'
+import About from './pages/About'
+import Header from './Header'
+import Test from './pages/Test';
+import "tailwindcss/tailwind.css"
 
-function App() {
+
+const App = () => {
+  const user = true
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <>
+      {/* <Header /> */}
+      <Test />
+      {/* <Router> */}
+        {/* <TopBar user={user} />
+        <Switch>
+          <Route exact path="/">
+            {user ? <Home /> : <Register />}
+          </Route>
+          <Route path="/about">
+            {user ? <About /> : <Register />}
+          </Route>
+          <Route path="/login">
+            {user ? <Login /> : <Register />}
+          </Route>
+          <Route path="/register">
+            <Register />
+          </Route>
+        </Switch>
+      </Router> */}
+      {/* <div>
+        <StripeCheckout
+          name="Sirojiddin shop"
+          image="https://avatars.githubusercontent.com/u/1486366?v=4"
+          billingAddress
+          shippingAddress
+          amount={100}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+          <button>CHECKOUT NOW</button>
+        </StripeCheckout>
+      </div > */}
+    </>
+  )
 }
 
-export default App;
+export default App
